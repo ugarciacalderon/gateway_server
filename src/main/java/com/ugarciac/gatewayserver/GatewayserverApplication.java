@@ -22,17 +22,17 @@ public class GatewayserverApplication {
 				.route(p ->
 						p.path("/ugarciac/accounts/**")
 								.filters(f -> f.rewritePath("/ugarciac/accounts/(?<segment>.*)","/${segment}")
-										.addResponseHeader("X-Resoibse-Time", LocalDateTime.now().toString()))
+										.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 								.uri("lb://ACCOUNTS"))
 				.route(p ->
 						p.path("/ugarciac/loans/**")
 								.filters(f -> f.rewritePath("/ugarciac/loans/(?<segment>.*)","/${segment}")
-										.addResponseHeader("X-Resoibse-Time", LocalDateTime.now().toString()))
+										.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 								.uri("lb://LOANS"))
 				.route(p ->
 						p.path("/ugarciac/cards/**")
 								.filters(f -> f.rewritePath("/ugarciac/cards/(?<segment>.*)","/${segment}")
-										.addResponseHeader("X-Resoibse-Time", LocalDateTime.now().toString()))
+										.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 								.uri("lb://CARDS"))
 				.build();
 	}

@@ -27,7 +27,7 @@ public class RequestTracerFilter implements GlobalFilter {
         } else {
             String correlationID = generateCorrelationId();
             exchange = filterUtility.setCorrelationId(exchange, correlationID);
-            logger.debug("ugarciac-correlation_id generated in RequestTraceFilter : {}", correlationID);
+            logger.debug("ugarciac-correlation-id generated in RequestTraceFilter : {}", correlationID);
         }
         return chain.filter(exchange);
 
