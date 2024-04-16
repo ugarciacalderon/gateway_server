@@ -30,3 +30,11 @@ logging:
     com:
       ulisesgc:
         cards: DEBUG
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10 # numero de peticiones antes de cambiar el estado a Closed o Open
+      permittedNumberOfCallsInHalfOpenState: 2 # numero de peticiones en estado  Half_Open antes de cambiar el estado a Closed o Open
+      failureRateThreshold: 50 # 50% umbral, si al menos ese procentaje falla entonces cambia de estado a Closed
+      waitDurationInOpenState: 10000 # ms, para cambiar entre estado Half_Open a Abierto
