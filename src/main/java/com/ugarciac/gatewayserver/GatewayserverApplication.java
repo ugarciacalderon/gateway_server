@@ -17,7 +17,6 @@ public class GatewayserverApplication {
 
 	@Bean
 	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
-		String red = "ugarciac";
 		return builder.routes()
 				.route(p ->
 						p.path("/ugarciac/accounts/**")
